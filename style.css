@@ -1,0 +1,139 @@
+/* Fondo oscuro y tecnológico */
+body {
+    background: radial-gradient(circle, #1a1a2e 0%, #16213e 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+}
+
+/* Contenedor relativo para que la luz se posicione detrás */
+#calculator {
+    position: relative;
+    background: rgba(15, 15, 25, 0.9);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 25px;
+    z-index: 1; /* Asegura que la calculadora esté arriba de la luz */
+}
+
+/* El resplandor (Luz por debajo) */
+#calculator::before {
+    content: "";
+    position: absolute;
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
+    z-index: -1; /* Se coloca detrás */
+    background: linear-gradient(45deg, #ff007f, #00d2ff, #7a00ff, #ff007f);
+    background-size: 400%; /* Para que el degradado tenga espacio para moverse */
+    border-radius: 30px;
+    filter: blur(25px); /* El efecto de luz difusa */
+    opacity: 0.6;
+    animation: luzFluida 8s linear infinite;
+}
+
+/* Animación del movimiento de la luz */
+@keyframes luzFluida {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Mejora opcional: Reflejo en los botones al flotar */
+button:hover {
+    transform: translateY(-7px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    /* El borde se ilumina con el color de la luz de fondo */
+    border: 1px solid rgba(0, 210, 255, 0.5);
+}
+
+
+/* Pantalla estilo Neón */
+#display {
+    width: 90%;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-bottom: 2px solid #00d2ff;
+    color: #00d2ff;
+    font-size: 2rem;
+    text-align: right;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-shadow: 0 0 10px #00d2ff;
+}
+
+/* Botones con efecto flotante */
+button {
+    width: 65px;
+    height: 65px;
+    margin: 8px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Sombra para dar profundidad (efecto flotante) */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Animación al pasar el mouse (Hover) */
+button:hover {
+    transform: translateY(-5px); /* Sube el botón */
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 25px rgba(0, 210, 255, 0.4);
+    color: #00d2ff;
+}
+
+/* Click */
+button:active {
+    transform: translateY(2px); /* Se hunde un poco */
+}
+
+/* Estilo especial para operadores */
+.operador {
+    color: #ff007f; /* Neón Rosa */
+}
+
+.operador:hover {
+    box-shadow: 0 15px 25px rgba(255, 0, 127, 0.4) !important;
+    color: #ff007f !important;
+}
+
+/* Botón igual (brillante) */
+.equal {
+    width: 145px;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.5);
+}
+
+.equal:hover {
+    box-shadow: 0 15px 30px rgba(0, 210, 255, 0.8);
+}
+
+body {
+    background: #05050a; /* Negro casi total */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden; /* Evita scrolls innecesarios */
+}
+
+body {
+    background: #05050a; /* Negro casi total */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden; /* Evita scrolls innecesarios */
+}
+
