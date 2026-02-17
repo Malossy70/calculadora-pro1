@@ -8,7 +8,7 @@ buttons.forEach(button => {
         if (button.id === 'ac') {
             display.value = '';
         } 
-        else if (button.id === 'de') {
+        else if (button.id === 'de' || value === '⌫') {
             display.value = display.value.slice(0, -1);
         } 
         else if (button.id === '=') {
