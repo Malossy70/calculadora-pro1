@@ -1,30 +1,33 @@
 const display = document.getElementById('display');
 const buttons = document.querySelectorAll('button');
+const calculator = document.getElementById('calculator');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         const value = button.innerText;
 
+        // Quitar el modo error al presionar cualquier botón
+        calculator.classList.remove('error-mode');
+
         if (button.id === 'ac') {
             display.value = '';
         } 
-        else if (button.id === 'de' || value === '⌫') {
+        else if (button.id === 'de') {
             display.value = display.value.slice(0, -1);
         } 
         else if (button.id === '=') {
             try {
-                // Usamos una función segura para evaluar o eval
+                // Si la pantalla está vacía, no hace nada
+                if(display.value === "") return;
                 display.value = eval(display.value);
             } catch {
                 display.value = "Error";
-                setTimeout(() => display.value = "", 1500);
+                // Activar el resplandor rojo
+                calculator.classList.add('error-mode');
             }
         } 
         else {
-            // Evita que se escriba el texto del botón "=" o "AC" por error
-            if (value !== '=' && value !== 'AC' && value !== 'DE') {
-                display.value += value;
-            }
+            display.value += value;
         }
     });
 });
