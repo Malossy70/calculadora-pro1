@@ -127,13 +127,20 @@ body {
     overflow: hidden; /* Evita scrolls innecesarios */
 }
 
-body {
-    background: #05050a; /* Negro casi total */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    overflow: hidden; /* Evita scrolls innecesarios */
+/* Clase que se activa con JavaScript cuando hay un error */
+#calculator.error-mode::before {
+    background: linear-gradient(45deg, #ff0000, #ff5f6d, #ff0000);
+    filter: blur(35px); /* Un poco más de brillo para la alerta */
+    opacity: 1;
+    animation: luzFluida 1s linear infinite; /* Más rápida para alertar */
 }
+
+#calculator.error-mode #display {
+    color: #ff5f6d;
+    border-bottom: 2px solid #ff0000;
+    text-shadow: 0 0 15px #ff0000;
+}
+
+
+
 
