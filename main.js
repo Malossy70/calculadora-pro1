@@ -6,17 +6,14 @@ buttons.forEach(button => {
         const value = button.innerText;
 
         if (button.id === 'ac') {
-            // Limpiar todo
             display.value = '';
         } 
         else if (button.id === 'de') {
-            // Borrar el último carácter (Delete)
             display.value = display.value.slice(0, -1);
         } 
         else if (button.id === '=') {
-            // Calcular el resultado
             try {
-                // Evaluamos la expresión matemática
+                // Usamos una función segura para evaluar o eval
                 display.value = eval(display.value);
             } catch {
                 display.value = "Error";
@@ -24,9 +21,10 @@ buttons.forEach(button => {
             }
         } 
         else {
-            // Escribir el número o operador en el display
-            // Si el botón es "00", se añade "00", si no, el texto del botón
-            display.value += value;
+            // Evita que se escriba el texto del botón "=" o "AC" por error
+            if (value !== '=' && value !== 'AC' && value !== 'DE') {
+                display.value += value;
+            }
         }
     });
 });
