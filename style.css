@@ -49,14 +49,16 @@ button:hover {
 
 /* Pantalla estilo Neón */
 #display {
-    width: 90%;
+    width: 100%;             /* Ahora ocupará el 100% del espacio disponible */
+    box-sizing: border-box;  /* EVITA QUE SOBRESALGA (Clave) */
+    
     background: rgba(0, 0, 0, 0.3);
     border: none;
     border-bottom: 2px solid #00d2ff;
     color: #00d2ff;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: right;
-    padding: 15px;
+    padding: 15px;           /* Mantén un buen espacio interno */
     margin-bottom: 20px;
     border-radius: 10px;
     text-shadow: 0 0 10px #00d2ff;
@@ -146,6 +148,7 @@ body {
     border-bottom: 2px solid #ff0000;
     text-shadow: 0 0 15px #ff0000;
 }
+
 
 
 
