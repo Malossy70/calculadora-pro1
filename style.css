@@ -11,13 +11,9 @@ body {
 
 /* Contenedor relativo para que la luz se posicione detrás */
 #calculator {
-    width: 90%;          /* Ocupa casi todo el ancho en el cel */
-    max-width: 350px;    /* Pero no crece más de esto en PC */
+    width: fit-content; /* El contenedor se ajusta al tamaño de los botones */
     margin: 20px auto;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 20px;
 }
 
 /* El resplandor (Luz por debajo) */
@@ -75,11 +71,23 @@ button:hover {
 
 /* Botones con efecto flotante */
 button {
-    width: 100%;       /* Ocupan el ancho de su columna */
-    height: auto;
-    aspect-ratio: 1 / 1; /* Los mantiene perfectamente cuadrados */
-    margin: 0;         /* El espacio lo maneja el 'gap' del grid */
-    font-size: 1.5rem;
+    /* Mantenemos tus colores y efectos futuristas */
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+
+    /* AJUSTE PARA QUE NO SEAN GIGANTES */
+    width: 55px;  /* Tamaño fijo más pequeño para que quepan 4 por fila */
+    height: 55px;
+    margin: 5px;  /* Espacio uniforme entre ellos */
+    font-size: 1.1rem;
+    display: inline-block; /* Los alinea como cajitas en línea */
+    vertical-align: top;
 }
 
 /* Animación al pasar el mouse (Hover) */
@@ -107,9 +115,8 @@ button:active {
 
 /* Botón igual (brillante) */
 .equal {
-   grid-column: span 2; /* Ocupa dos espacios de columna */
-    aspect-ratio: auto;
-    height: 100%; 
+    width: 125px; /* Ancho de dos botones más el margen */
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
 }
 
 .equal:hover {
@@ -139,6 +146,7 @@ body {
     border-bottom: 2px solid #ff0000;
     text-shadow: 0 0 15px #ff0000;
 }
+
 
 
 
